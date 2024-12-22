@@ -1,6 +1,7 @@
 {
   "branches": [
     "main",
+    "revanced-extended",
     {
       "name": "dev",
       "prerelease": true
@@ -14,7 +15,6 @@
         ]
       }
     ],
-    "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "gradle-semantic-release-plugin",
     [
@@ -26,8 +26,7 @@
           "gradle.properties",
           "patches.json",
         ],
-        "message": "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
+        "message": "chore: Release v${nextRelease.version} [skip ci]\n\n'Add upstream sync'"      }
     ],
     [
       "@semantic-release/github",
@@ -41,13 +40,6 @@
           },
         ],
         successComment: false
-      }
-    ],
-    [
-      "@saithodev/semantic-release-backmerge",
-      {
-        backmergeBranches: [{"from": "main", "to": "dev"}],
-        clearWorkspace: true
       }
     ]
   ]
